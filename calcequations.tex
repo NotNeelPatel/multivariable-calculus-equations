@@ -1,0 +1,212 @@
+\documentclass{article}
+\usepackage{multicol}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage[landscape]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb}
+\usepackage{color,graphicx,overpic}
+\usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+
+\linespread{1.3}
+
+\hypersetup{
+	pdftitle={Neel Patel's MATH 2004 (Multivariable Calculus) Equation Sheet}
+}
+\pdfinfo{
+  /Title (MATH2004Equations.pdf)
+  /Creator (TeX)
+  /Producer (pdfTeX 3.14)
+  /Author (Neel Patel)
+  }
+
+% This sets page margins to .5 inch if using letter paper, and to 1cm
+% if using A4 paper. (This probably isn't strictly necessary.)
+% If using another size paper, use default 1cm margins.
+\ifthenelse{\lengthtest { \paperwidth = 11in}}    
+	{ \geometry{top=.5in,left=.5in,right=.5in,bottom=.5in} }
+    {\ifthenelse{ \lengthtest{ \paperwidth = 297mm}}
+        {\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+        {\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+	}
+
+	
+% Turn off header and footer
+\pagestyle{empty}
+
+% Redefine section commands to use less space
+
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%x
+                                {\normalfont\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+                                {-1explus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%
+                                {\normalfont\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {1ex plus .2ex}%
+                                {\normalfont\small\bfseries}}
+\makeatother
+
+% Define BibTeX command
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    \kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+% Don't print section numbers
+\setcounter{secnumdepth}{0}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.5ex}
+
+%My Environments
+\newtheorem{example}[section]{Example}
+
+% -----------------------------------------------------------------------
+
+\begin{document}
+\raggedright
+\footnotesize
+\begin{multicols}{3}
+
+
+% multicol parameters
+% These lengths are set only within the two main columns
+		\setlength{\columnseprule}{0.25pt}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+\begin{center}
+     \normalsize{\underline{MATH 2004: Multivariable Calculus Equations}} \\
+	 \normalsize{By Neel Patel} \\
+\end{center}
+\section{Chapter 1}
+\subsection{Trig Identities}
+$cosh\,t = \frac{1}{2}(e^t + e^{-t})$ \\
+$sinh\,t = \frac{1}{2}(e^t - e^{-t})$ \\
+$cos^2x = \frac{1+cos2x}{2}$ \\
+$sin^2x = \frac{1-cos2x}{2}$ \\
+$2sinxcosx = sin2x$ \\
+$sinasinb = \frac{cos(a-b)-cos(a+b)}{2}$ \\
+$cosacosb = \frac{cos(a+b)+cos(a-b)}{2}$ \\
+$sinacosb = \frac{sin(a+b)+sin(a-b)}{2}$ \\
+\textbf{Trig Integral} \\
+$\int sin^m xcos^n xdx:$ \\
+- If m is odd, let $u = cosx$ \\
+- If n is odd, let $u = sinx$ \\
+- If both are even, then use half-angle formula \\
+\textbf{Half-angle Formula} \\
+$sin(\frac{\alpha}{2}) = \pm\sqrt{\frac{1-cos\alpha}{2}}$ \\
+$cos(\frac{\alpha}{2}) = \pm\sqrt{\frac{1+cos\alpha}{2}}$ \\
+\textbf{Trig Substitution} \\
+$\sqrt{a^2-x^2} \to x = asin\theta, \-\frac{\pi}{2}\leq\theta\leq\frac{\pi}{2}$ \\
+$\sqrt{a^2+x^2} \to x = atan\theta, \-\frac{\pi}{2}\leq\theta\leq\frac{\pi}{2}$ \\
+$\sqrt{x^2-a^2} \to x = asec\theta, \-\frac{\pi}{2}\leq\theta\leq\frac{\pi}{2}$ \\
+\subsection{1.1-1.6}
+\textbf{Length (norm,magnitude)} $|(a,b,c)| = \sqrt{a^2+b^2+c^2}$ \\
+\textbf{Unit Vector} $|\vec{u}| = 1$ \\
+\subsection{1.7-1.10}
+\textbf{Dot Product} $\vec{u} \cdot \vec{v} = u_{1}v_{1} + u_{2}v_{2} + u_{3}v_{3}$ \\
+\textbf{Orthogonal} $\vec{u}\perp\vec{v}$ if $\vec{u} \cdot \vec{v} = 0$ \\
+\textbf{Angle} $cos\theta = \frac{\vec{u} \cdot \vec{v}}{|\vec{u}||\vec{v}|}, 0\leq\theta\pi$ \\
+$cos\alpha = \frac{\vec{u} \cdot \vec{i}}{|\vec{u}||\vec{i}|}$ \\
+$cos\beta = \frac{\vec{u} \cdot \vec{j}}{|\vec{u}||\vec{j}|}$ \\
+$cos\gamma = \frac{\vec{u} \cdot \vec{k}}{|\vec{u}||\vec{k}|}$ \\
+$cos^2\alpha + cos^2\beta + cos^2\gamma = 1, \frac{\vec{u}}{|\vec{u}|} = (cos\alpha,cos\beta,cos\gamma)$ \\
+\textbf{Cross Product} $\vec{u} \times \vec{v} = (u_{2}v_{3} - u_{3}v_{2}, u_{3}v_{1} - u_{1}v_{3}, u_{1}v_{3} - u_{2}v_{1})$\\
+\textbf{Area of Parallelogram} $A = |\vec{u} \times \vec{v}|$ \\
+\textbf{Area of Triangle} $A = \frac{1}{2}|\vec{u} \times \vec{v}|$ \\
+\textbf{Volume of Parallelopiped} $V = |\vec{u} \cdot (\vec{v} \times \vec{w})|$ \\
+
+\section{Chapter 2}
+\subsection{2.1-2.5 Lines and Planes}
+\textbf{Equation of Line} 
+$\vec{r}(t) = P + t\vec{v}$ \\
+\textbf{Line Segment} 
+$\vec{r}(t) = (1-t)\vec{P} + t\vec{Q}$\\
+
+\subsection{2.6 Rotations/Translations in Plane}
+\textbf{Counter-Clockwise} \\
+$\begin{pmatrix}
+	x' \\
+	y'
+\end{pmatrix} 
+= A\begin{pmatrix}
+	x \\
+	y
+\end{pmatrix}
+= \begin{pmatrix}
+	xcos\theta - ysin\theta \\
+	xsin\theta + ycos\theta
+\end{pmatrix},
+A = \begin{pmatrix}
+		cos\theta & -sin\theta \\
+		sin\theta & cos\theta
+\end{pmatrix}$
+$A^{-1} = \begin{pmatrix}
+		cos\theta & sin\theta \\
+		-sin\theta & cos\theta
+\end{pmatrix}$ \\
+\textbf{Translated Origin} \\
+$\begin{pmatrix}
+	x' \\
+	y'
+\end{pmatrix} 
+= \begin{pmatrix}
+		x-h \\
+		y-k
+\end{pmatrix}$
+
+\subsection{2.7-2.8 Parametric Curves}
+\textbf{Parabola} $(x-x_{0})^2 = 4p(y-y_{0})$, $y = \frac{1}{4p}(t-x_{0})^2+y_{0}$ \\
+\textbf{Ellipse} $\frac{(x-x_{0})^2}{a^2}+\frac{(y-y_{0})^2}{a^2} = 1$, $x = x_{0} + a\,cos\,t, y=y_{0}+b\,sin\,t$ \\
+\textbf{Hyperbola} $\frac{(x-x_{0})^2}{a^2}-\frac{(y-y_{0})^2}{a^2} = 1$, $x = x_{0} + a\,sec\,t, y = y_{0} + b\,tan\,t, \pi<t<\pi$\\
+\textbf{General Conic Sections} \\
+If $B^2-4AC=0$, either parabola, 2 parallel lines, 1 line, or no curve \\
+If $B^2-4AC>0$, either hyperbola, or 2 intersecting lines \\
+If $B^2-4AC<0$, either ellipse, circle, point, or no curve \\
+\textbf{Derivatives} \\
+$\frac{dy}{dx} = \frac{\frac{dy}{dt}}{\frac{dx}{dt}}$ \\
+$\frac{d^2y}{dx^2} = \frac{\frac{d}{dt}(\frac{dy}{dx})}{\frac{dx}{dt}}$
+
+\subsection{2.9 Applications to Area Problems}
+\textbf{Area under Parametric Curve}
+\[ A = \int_{\alpha}^{\beta} y(t)x'(t) \,dt \]
+\textbf{Area of region R enclosed by C}
+\[ A =| \int_{\alpha}^{\beta} y(t)x'(t) \,dt|\]
+\textbf{Arc Length}
+\[ L = \int_{\alpha}^{\beta} \sqrt{[x'(t)]^2+[y'(t)]^2}\,dt \] 
+
+\subsection{2.11-2.14 Polar Coordinates}
+\textbf{Polar $\rightleftharpoons$ Cartesian} \\
+$x = rcos\theta, y = rsin\theta, r = \sqrt{x^2+y^2}, tan\theta = \frac{y}{x}$ \\
+\textbf{Derivative} \\
+$\frac{dy}{dx} = \frac{r'_{\theta}sin\theta+rcos\theta}{r'_{\theta}cos\theta-rsin\theta}$ \\
+\textbf{Area of region bounded by $r = f(\theta)$}
+\[ A = \int_{\alpha}^{\beta} \frac{1}{2}r^2\,d\theta \]
+\textbf{Area of more general region}
+\[ A = \int_{\alpha}^{\beta} \frac{1}{2}(r_{o}^2-r_{i}^2)\,d\theta \]
+\textbf{Arc Length}
+\[ L = \int_{\alpha}^{\beta} \sqrt{(r'_{\theta})^2 + r^2}\,d\theta \]
+
+\section{Chapter 3}
+\subsection{3.2-3.3 Partial Derivatives}
+\[ z_{x}=\frac{\partial z}{\partial x} := \frac{\partial f}{\partial x} := D_{x}f := \lim_{h \to 0}\frac{f(x+h,y)-f(x,y)}{h} \]
+\[ z_{y}=\frac{\partial z}{\partial y} := \frac{\partial f}{\partial y} := D_{y}f := \lim_{h \to 0}\frac{f(x, y + h)-f(x,y)}{h} \]
+\[ f_{x}(x,y,z) \]
+\[ = \frac{\partial w}{\partial x} := \frac{\partial f}{\partial x} := D_{x}f := \lim_{h \to 0}\frac{f(x+h,y,z)-f(x,y,z)}{h} \]
+\subsection{3.5 Directional Derivatives and Gradients}
+$ f_{\vec{u}}(x_{0},y_{0})\;or\;D_{\vec{u}}f(x_{0},y_{0}) = (f_{x}(x_{0},y_{0})u_{1} + f_{y}(x_{0},y_{0})u_{2}) $ \\
+$ \nabla f(x_{0},y_{0}) = (f_{x}(x_{0},y_{0})) $ \\
+$ f_{\vec{u}}(x_{0},y_{0},z_{0})= (f_{x}(x_{0},y_{0},z_{0})u_{1} + f_{y}(x_{0},y_{0},z_{0})u_{2} + f_{z}(x_{0},y_{0},z_{0})u_{3})) $\\
+$ \nabla f(x_{0},y_{0},z_{0}) = (f_{x}(x_{0},y_{0},z_{0})) $ \\
+
+
+\end{multicols}
+\end{document}
